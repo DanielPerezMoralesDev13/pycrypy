@@ -1,0 +1,34 @@
+# Author: Daniel Benjamin Perez Morales
+# GitHub: https://github.com/DanielPerezMoralesDev13
+# Email: danielperezdev@proton.me
+
+# Incluir el fichero de documentación principal
+include README.md
+
+# Incluir todos los ficheros de datos en el directorio 'src'
+recursive-include src *
+recursive-include dist *
+
+
+# Excluir los ficheros del directorio 'Docs'
+recursive-exclude Docs *
+
+# Excluir todos los directorios '.mypy_cache' en cualquier nivel del árbol de directorios
+global-exclude */.mypy_cache *
+global-exclude */__pycache__ *
+
+# Excluir los ficheros del directorio '.git'
+recursive-exclude .git *
+
+# Excluir los ficheros del directorio 'Themes'
+recursive-exclude Themes *
+
+# Excluir los siguientes ficheros
+exclude CODE_OF_CONDUCT.md
+exclude CODIGO_CONDUCTA.md
+exclude SECURITY.*
+exclude pycrypy.spec
+exclude .gitignore
+exclude .gitattributes
+exclude .editorconfig
+exclude requirements.txt

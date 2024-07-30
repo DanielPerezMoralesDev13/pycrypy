@@ -1,0 +1,12 @@
+colored==2.2.4
+mypy==1.10.0
+pyinstaller==6.6.0
+prettytable==3.10.2
+toml==0.10.2
+
+# Author: Daniel Benjamin Perez Morales
+# GitHub: https://github.com/DanielPerezMoralesDev13
+# Email: danielperezdev@proton.me
+
+# python3 -m pip install types-toml
+# mypy --install-types
