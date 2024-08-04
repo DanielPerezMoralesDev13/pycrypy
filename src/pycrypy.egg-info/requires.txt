@@ -1,5 +1,0 @@
-pytoml>=0.1.21
-colored>=2.2.4
-mypy>=1.10.0
-pyinstaller>=6.6.0
-prettytable>=3.10.2

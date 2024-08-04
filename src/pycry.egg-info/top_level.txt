@@ -1,6 +1,0 @@
-TemasClaros
-TemasOscuros
-TemasRecomendados
-cli
-config
-lib

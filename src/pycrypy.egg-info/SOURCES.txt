@@ -1,2 +1,0 @@
-LICENSE.es.md
-LICENSE.md
