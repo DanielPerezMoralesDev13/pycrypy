@@ -26,25 +26,25 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 ### `os.path.join(...)`
 
 - **`os.path.join(*paths)`**: Junta uno o más componentes de ruta de una manera independiente del sistema operativo. En este caso, se están juntando dos componentes:
-  - `os.path.dirname(__file__)`: El directorio donde se encuentra el archivo actual (`__file__`).
+  - `os.path.dirname(__file__)`: El directorio donde se encuentra el fichero actual (`__file__`).
   - `'..'`: El directorio padre del directorio actual.
 
 ### `os.path.dirname(...)`
 
-- **`os.path.dirname(path)`**: Devuelve la ruta del directorio de un archivo. Aquí, está recibiendo `__file__`, que es una variable que contiene la ruta del archivo Python que se está ejecutando.
+- **`os.path.dirname(path)`**: Devuelve la ruta del directorio de un fichero. Aquí, está recibiendo `__file__`, que es una variable que contiene la ruta del fichero Python que se está ejecutando.
 
 ### `__file__`
 
-- **`__file__`**: Es una variable que contiene la ruta del archivo Python que se está ejecutando.
+- **`__file__`**: Es una variable que contiene la ruta del fichero Python que se está ejecutando.
 
 ### Juntando todo:
 
-1. **`os.path.dirname(__file__)`**: Obtiene la ruta del directorio donde se encuentra el archivo Python que se está ejecutando.
-2. **`os.path.join(os.path.dirname(__file__), '..')`**: Junta la ruta del directorio del archivo actual con `'..'`, que representa el directorio padre, obteniendo así la ruta del directorio padre del archivo actual.
+1. **`os.path.dirname(__file__)`**: Obtiene la ruta del directorio donde se encuentra el fichero Python que se está ejecutando.
+2. **`os.path.join(os.path.dirname(__file__), '..')`**: Junta la ruta del directorio del fichero actual con `'..'`, que representa el directorio padre, obteniendo así la ruta del directorio padre del fichero actual.
 3. **`os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))`**: Convierte esta ruta relativa del directorio padre en una ruta absoluta.
-4. **`sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))`: Añade esta ruta absoluta del directorio padre a `sys.path`, lo que permite importar módulos desde el directorio padre del archivo actual.
+4. **`sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))`: Añade esta ruta absoluta del directorio padre a `sys.path`, lo que permite importar módulos desde el directorio padre del fichero actual.
 
-En resumen, esta línea de código añade el directorio padre del archivo actual al `sys.path`, permitiendo importar módulos desde ese directorio.
+En resumen, esta línea de código añade el directorio padre del fichero actual al `sys.path`, permitiendo importar módulos desde ese directorio.
 """
 from config.Path import vsde, rutaAlacrittyToml # Verficar Si Directorio Existe -> Abreviado: vsde
 from lib.CambiarCursorThickness import cct # Cambiar cursor thickness -> Abreviado: cct
@@ -85,7 +85,7 @@ class Cli():
     Esta clase facilita la personalización de Alacritty directamente desde la terminal, ofreciendo una experiencia de configuración rápida y conveniente.
     """
     def __init__(self: "Cli") -> None:
-        self.__version__: str = "1.0.5"
+        self.__version__: str = "1.0.0"
         "* Version de la utilidad pycrypy"
         self.parser = ArgumentParser(
             prog = f"{bold(t = 'pycrypy', c = 'blanco')}",  # Nombre del programa que se muestra en la ayuda

@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: pycrypy
-Version: 1.0.5
+Version: 1.0.0
 Summary: Esta utilidad, desarrollada en Python3, simplifica significativamente el proceso de configuracion de Alacritty, permitiendo ajustar de manera simple la fuente, el tema, el padding, los cursores y los estilos de la fuente.
 Home-page: https://github.com/DanielPerezMoralesDev13/pycrypy.git
 Author: Daniel Benjamin Perez Morales
@@ -24,6 +24,8 @@ Requires-Dist: prettytable>=3.10.2
 <!-- Author: Daniel Benjamin Perez Morales -->
 <!-- GitHub: https://github.com/DanielPerezMoralesDev13 -->
 <!-- Email: danielperezdev@proton.me -->
+
+<!-- PYTHONPATH=src python3 src/cli/main.py --help -->
 
 # ***pycrypy***
 
