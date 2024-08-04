@@ -2,10 +2,51 @@
 # GitHub: https://github.com/DanielPerezMoralesDev13
 # Email: danielperezdev@proton.me
 
+
 from argparse import Namespace, ArgumentParser
 from pathlib import Path
 from sys import argv, stderr, exit, stdout
-from config.Path import vsde, rutaAlacrittyToml
+import os, sys
+sys.path.append(os.path.abspath(path = os.path.join(os.path.dirname(p = __file__), '..')))
+
+"""
+```python
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+```
+
+### `sys.path.append(...)`
+
+- **`sys.path`**: Es una lista en Python que contiene las rutas donde el intérprete de Python buscará los módulos a importar.
+- **`sys.path.append(...)`**: Añade un nuevo directorio a la lista `sys.path`. Esto significa que Python buscará módulos también en el directorio que se añada aquí.
+
+### `os.path.abspath(...)`
+
+- **`os.path.abspath(path)`**: Convierte una ruta relativa en una ruta absoluta. Esto es útil para asegurarse de que siempre se trabaje con rutas completas, independientemente del directorio actual desde el que se ejecute el script.
+
+### `os.path.join(...)`
+
+- **`os.path.join(*paths)`**: Junta uno o más componentes de ruta de una manera independiente del sistema operativo. En este caso, se están juntando dos componentes:
+  - `os.path.dirname(__file__)`: El directorio donde se encuentra el archivo actual (`__file__`).
+  - `'..'`: El directorio padre del directorio actual.
+
+### `os.path.dirname(...)`
+
+- **`os.path.dirname(path)`**: Devuelve la ruta del directorio de un archivo. Aquí, está recibiendo `__file__`, que es una variable que contiene la ruta del archivo Python que se está ejecutando.
+
+### `__file__`
+
+- **`__file__`**: Es una variable que contiene la ruta del archivo Python que se está ejecutando.
+
+### Juntando todo:
+
+1. **`os.path.dirname(__file__)`**: Obtiene la ruta del directorio donde se encuentra el archivo Python que se está ejecutando.
+2. **`os.path.join(os.path.dirname(__file__), '..')`**: Junta la ruta del directorio del archivo actual con `'..'`, que representa el directorio padre, obteniendo así la ruta del directorio padre del archivo actual.
+3. **`os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))`**: Convierte esta ruta relativa del directorio padre en una ruta absoluta.
+4. **`sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))`: Añade esta ruta absoluta del directorio padre a `sys.path`, lo que permite importar módulos desde el directorio padre del archivo actual.
+
+En resumen, esta línea de código añade el directorio padre del archivo actual al `sys.path`, permitiendo importar módulos desde ese directorio.
+"""
+from config.Path import vsde, rutaAlacrittyToml # Verficar Si Directorio Existe -> Abreviado: vsde
 from lib.CambiarCursorThickness import cct # Cambiar cursor thickness -> Abreviado: cct
 from lib.CambiarTemaRuta import ctr # Cambiar tema ruta -> Abreviado: ctr
 from lib.CargarNuevoTema import cnt # Cargar nuevo tema -> Abreviado: cnt
@@ -322,7 +363,7 @@ class Cli():
         print(italic(t = "pycrypy -o 0.7", c = "blanco"), end = "\n", file = stderr)
         return None
 
-    async def string_mapeo_a_float_or_int(self, variable: str, tipo: Type[Union[float, int]]) -> Union[float, int, NoReturn]:
+    async def string_mapeo_a_float_or_int(self, variable: Union[str, bool], tipo: Type[Union[float, int]]) -> Union[float, int, bool, str, NoReturn]:
         """
         Convierte una cadena de caracteres a un tipo numérico (int o float).
 
@@ -339,8 +380,13 @@ class Cli():
         - Si ocurre un ValueError, imprime un mensaje de error y retorna None.
         """
         try:
-            if tipo is int: return int(variable)
-            elif tipo is float: return float(variable)
+            # Verificamos que la el tipo sea int o false y que la variable no se de tipo False
+            if tipo is int and variable: 
+                return int(variable)
+            elif tipo is float and variable: 
+                return float(variable)
+            else:
+                return variable
         except ValueError:
             print(bold(t = f"Error: El valor proporcionado `{variable}` tiene que ser de tipo ", c = "rojo"), end="", file = stderr)
             print(italic(t = "int" if tipo is int else "float", c = "verde"), end="\n", file = stderr)
@@ -443,7 +489,6 @@ class Cli():
         # Verificamos si no se proporciono ningun valor para la flag `-F`
         if args.fontSize is not None:
             args.fontSize = await self.string_mapeo_a_float_or_int(variable = args.fontSize, tipo = float)
-
         
         # Verificamos si no se proporciono ningun valor para la flag `-s`
         if args.style is not None and not args.style:

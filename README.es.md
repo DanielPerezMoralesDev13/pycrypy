@@ -2,6 +2,8 @@
 <!-- GitHub: https://github.com/DanielPerezMoralesDev13 -->
 <!-- Correo electrónico: danielperezdev@proton.me -->
 
+<!-- PYTHONPATH=src python3 src/cli/main.py --help -->
+
 # ***pycrypy***
 
 > *`pycrypy` es una herramienta de línea de comandos escrita en Python para configurar fácilmente las opciones de Alacritty desde la terminal. Permite ajustar temas, fuentes, tamaño de fuente, opacidad, padding, forma del cursor, y más, con simples comandos.*

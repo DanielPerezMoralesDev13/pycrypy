@@ -10,3 +10,4 @@ toml==0.10.2
 
 # python3 -m pip install types-toml
 # mypy --install-types
+# mypy --explicit-package-bases cli/main.py
