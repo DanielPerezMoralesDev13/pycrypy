@@ -85,7 +85,7 @@ class Cli():
     Esta clase facilita la personalización de Alacritty directamente desde la terminal, ofreciendo una experiencia de configuración rápida y conveniente.
     """
     def __init__(self: "Cli") -> None:
-        self.__version__: str = "1.0.0"
+        self.__version__: str = "0.0.0"
         "* Version de la utilidad pycrypy"
         self.parser = ArgumentParser(
             prog = f"{bold(t = 'pycrypy', c = 'blanco')}",  # Nombre del programa que se muestra en la ayuda

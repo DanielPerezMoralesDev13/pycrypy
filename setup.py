@@ -13,7 +13,7 @@ with open(file = r"README.md", mode = "r", encoding = "utf-8") as f:
 
 setup(
     name = "pycrypy",
-    version = "1.0.0",
+    version = "0.0.0",
     author = "Daniel Benjamin Perez Morales",
     author_email = "danielperezdev@proton.me",
     description = "Esta utilidad, desarrollada en Python3, simplifica significativamente el proceso de configuracion de Alacritty, permitiendo ajustar de manera simple la fuente, el tema, el padding, los cursores y los estilos de la fuente.",

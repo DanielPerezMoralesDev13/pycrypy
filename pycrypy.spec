@@ -5,7 +5,7 @@
 # Email: danielperezdev@proton.me
 
 # Ruta al Fichero principal del script
-scriptPath = "src/main.py"
+scriptPath = "src/cli/main.py"
 
 # Crea la variable de análisis
 a = Analysis([scriptPath],

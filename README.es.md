@@ -284,9 +284,14 @@ pycrypy -V
 
 ### ***Crear un Ejecutable con PyInstaller***
 
-> *Para convertir el script `main.py` en un ejecutable independiente, utiliza PyInstaller con las siguientes opciones:*
+> *Para convertir el script `cli/main.py` en un ejecutable independiente, utiliza PyInstaller con las siguientes opciones:*
 
 **Aquí está el comando `pyinstaller` equivalente a la configuración que has proporcionado:**
+
+```bash
+# Mover al directorio source (fuente)
+cd ./src
+```
 
 ```bash
 pyinstaller --onefile \
@@ -300,7 +305,7 @@ pyinstaller --onefile \
             --add-data "cli:cli" \
             --add-data "config:config" \
             --add-data "lib:lib" \
-            main.py
+            src/cli/main.py
 ```
 
 ### ***Desglose del Comando***
@@ -311,11 +316,11 @@ pyinstaller --onefile \
 - **`--noconsole`:** *No abre una ventana de consola al ejecutar el ejecutable (para aplicaciones GUI).*
 - **`--name pycrypy`:** *Define el nombre del fichero ejecutable.*
 - **`--add-data "src:dest"`:** *Especifica los ficheros de datos adicionales y sus destinos en el ejecutable. La sintaxis es `"source_path:destination_path"`.*
-- **`main.py`:** *El fichero principal del script.*
+- **`cli/main.py`:** *El fichero principal del script.*
 
 ### ***Ejecución del Comando***
 
-*Ejecuta el comando en la terminal desde el directorio donde se encuentra tu fichero `main.py`. PyInstaller se encargará de empaquetar tu aplicación, incluyendo los directorios y ficheros adicionales especificados.*
+*Ejecuta el comando en la terminal desde el directorio donde se encuentra tu fichero `cli/main.py`. PyInstaller se encargará de empaquetar tu aplicación, incluyendo los directorios y ficheros adicionales especificados.*
 
 *Si necesitas ajustar las rutas de los ficheros de datos, asegúrate de que las rutas sean correctas en relación con el directorio en el que estás ejecutando el comando.*
 

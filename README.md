@@ -285,7 +285,7 @@ pycrypy -V
 
 ### ***Creating an Executable with PyInstaller***
 
-> *To convert the `main.py` script into a standalone executable, use PyInstaller with the following options:*
+> *To convert the `src/cli/main.py` script into a standalone executable, use PyInstaller with the following options:*
 
 **Here is the equivalent `pyinstaller` command for the configuration you provided:**
 
@@ -301,7 +301,7 @@ pyinstaller --onefile \
             --add-data "cli:cli" \
             --add-data "config:config" \
             --add-data "lib:lib" \
-            main.py
+            src/cli/main.py
 ```
 
 ### ***Command Breakdown***
@@ -312,11 +312,11 @@ pyinstaller --onefile \
 - **`--noconsole`:** *Does not open a console window when running the executable (for GUI applications).*
 - **`--name pycrypy`:** *Defines the name of the executable file.*
 - **`--add-data "src:dest"`:** *Specifies additional data files and their destinations in the executable. The syntax is `"source_path:destination_path".*
-- **`main.py`:** *The main script file.*
+- **`src/cli/main.py`:** *The main script file.*
 
 ### ***Running the Command***
 
-*Run the command in the terminal from the directory where your `main.py` file is located. PyInstaller will package your application, including the specified directories and files.*
+*Run the command in the terminal from the directory where your `src/cli/main.py` file is located. PyInstaller will package your application, including the specified directories and files.*
 
 *If you need to adjust data file paths, ensure they are correct relative to the directory from which you are running the command.*
 
