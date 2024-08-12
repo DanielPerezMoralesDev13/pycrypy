@@ -3,32 +3,35 @@
 # Email: danielperezdev@proton.me
 
 # Incluir el fichero de documentación principal
-include README.md
+include ./README.md
+
+# Incluir el fichero de LICENSE
+include LICENSE*
+
+# Incluir los siguientes ficheros
+include ./CODE_OF_CONDUCT.md
+include ./CODIGO_CONDUCTA.md
+include ./SECURITY.*
+include ./pycrypy.spec
+include ./requirements.txt
+include ./CONTRIBUCION.md
 
 # Incluir todos los ficheros de datos en el directorio 'src'
-recursive-include src *
-recursive-include dist *
-
-
-# Excluir los ficheros del directorio 'Docs'
-recursive-exclude Docs *
+recursive-include ./src *
+recursive-include ./dist *
 
 # Excluir todos los directorios '.mypy_cache' en cualquier nivel del árbol de directorios
 global-exclude */.mypy_cache *
 global-exclude */__pycache__ *
 
 # Excluir los ficheros del directorio '.git'
-recursive-exclude .git *
+recursive-exclude ./.git *
 
 # Excluir los ficheros del directorio 'Themes'
-recursive-exclude Themes *
+recursive-exclude ./Themes *
 
 # Excluir los siguientes ficheros
-exclude CODE_OF_CONDUCT.md
-exclude CODIGO_CONDUCTA.md
-exclude SECURITY.*
-exclude pycrypy.spec
-exclude .gitignore
-exclude .gitattributes
-exclude .editorconfig
-exclude requirements.txt
+exclude ./.gitignore
+exclude ./.gitattributes
+exclude ./.editorconfig
+exclude ./*.asc
