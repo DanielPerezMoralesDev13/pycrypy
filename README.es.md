@@ -299,13 +299,13 @@ pyinstaller --onefile \
             --clean \
             --noconsole \
             --name pycrypy \
-            --add-data "TemasClaros:TemasClaros" \
-            --add-data "TemasOscuros:TemasOscuros" \
-            --add-data "TemasRecomendados:TemasRecomendados" \
-            --add-data "cli:cli" \
-            --add-data "config:config" \
-            --add-data "lib:lib" \
-            src/cli/main.py
+            --add-data "./src/TemasClaros:TemasClaros" \
+            --add-data "./src/TemasOscuros:TemasOscuros" \
+            --add-data "./src/TemasRecomendados:TemasRecomendados" \
+            --add-data "./src/cli:cli" \
+            --add-data "./src/config:config" \
+            --add-data "./src/lib:lib" \
+            ./src/cli/main.py
 ```
 
 ### ***Desglose del Comando***
