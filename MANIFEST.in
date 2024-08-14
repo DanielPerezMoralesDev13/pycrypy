@@ -1,37 +1,44 @@
-# Author: Daniel Benjamin Perez Morales
+kkk# Author: Daniel Benjamin Perez Morales
 # GitHub: https://github.com/DanielPerezMoralesDev13
 # Email: danielperezdev@proton.me
 
-# Incluir el fichero de documentación principal
-include ./README.md
+# Incluir los fichero de documentación principal.
+include ./README.*
 
-# Incluir el fichero de LICENSE
-include LICENSE*
+# Incluir el fichero de licencia del proyecto.
+include ./LICENSE*
 
-# Incluir los siguientes ficheros
+# Incluir los siguientes documentos relacionados con la conducta y seguridad.
 include ./CODE_OF_CONDUCT.md
 include ./CODIGO_CONDUCTA.md
 include ./SECURITY.*
 include ./pycrypy.spec
+
+# Incluir los requisitos del proyecto para la instalación de dependencias.
 include ./requirements.txt
+
+# Incluir el archivo de contribución para guiar a los colaboradores.
 include ./CONTRIBUCION.md
 
-# Incluir todos los ficheros de datos en el directorio 'src'
+# Incluir todos los archivos de datos en los directorios 'src' y 'dist'.
 recursive-include ./src *
 recursive-include ./dist *
 
-# Excluir todos los directorios '.mypy_cache' en cualquier nivel del árbol de directorios
+# Excluir todos los directorios '.mypy_cache' en cualquier nivel del árbol de directorios.
 global-exclude */.mypy_cache *
+
+# Excluir todos los directorios '__pycache__' en cualquier nivel del árbol de directorios.
 global-exclude */__pycache__ *
 
-# Excluir los ficheros del directorio '.git'
+# Excluir los archivos del directorio '.git' para evitar incluir información de control de versiones.
 recursive-exclude ./.git *
 
-# Excluir los ficheros del directorio 'Themes'
+# Excluir todos los archivos en el directorio 'Themes' para mantener el foco en los archivos relevantes.
 recursive-exclude ./Themes *
 
-# Excluir los siguientes ficheros
+# Excluir los siguientes archivos de configuración y control.
 exclude ./.gitignore
 exclude ./.gitattributes
 exclude ./.editorconfig
 exclude ./*.asc
+
